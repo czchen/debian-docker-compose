@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-rc/~rc/" \
+https://github.com/docker/compose/releases /docker/compose/archive/?(\d\S*).tar.gz
