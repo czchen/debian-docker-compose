@@ -1,0 +1,10 @@
+#!/bin/bash
+set -ex
+rm -rf venv
+virtualenv venv
+venv/bin/pip install -r requirements.txt
+venv/bin/pip install -r requirements-dev.txt
+venv/bin/pip install .
+venv/bin/pyinstaller -F bin/docker-compose
+mv dist/docker-compose dist/docker-compose-Darwin-x86_64
+dist/docker-compose-Darwin-x86_64 --version
